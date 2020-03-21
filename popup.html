@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>scrapshut</title>
+	<link rel="stylesheet" type="text/css" href="star-rating-svg.css">
+	<link rel="stylesheet" type="text/css" href="jquery.tagsinput.min.css">
+	
+	<style type="text/css">
+		body {
+			margin: 0;
+		}
+
+		header {
+			text-align: center;
+			font-weight: bold;
+			font-size: 20px;
+			color: #FFF;
+			background: skyblue;
+			margin-bottom: 10px;
+		}
+
+		main {
+			padding: 10px;
+		}
+
+		input,
+		textarea {
+			border: 1px solid #ddd;
+			width: 100%;
+			padding: 10px;
+			box-sizing: border-box;
+		}
+
+		button {
+			border: 1px solid #ddd;
+			background: skyblue;
+			padding: 10px;
+			font-weight: bold;
+			color: #FFF;
+		}
+	</style>
+</head>
+
+<body style="width:400px">
+	<header class="header">
+		<a href="https://scrapshut.com/"><img src="scrap_withoutbg.png" alt="" class="logo"></a>
+	</header>
+	<!-- <h1>Facebook Connect For Chrome Extension</h1> -->
+	<!-- <p><a target="_blank" href="https://graph.facebook.com/v2.10/oauth/access_token?grant_type=fb_exchange_token&client_id=651073722369800&client_secret=9ebff4df7daafcc0a46d57c63695199c&grant_type=client_credentials&redirect_uri=https://www.facebook.com/connect/login_success.html">Facebook Connect</a></p> -->
+	<button class="fb-login-button btn btn-outline-light btn-lg"><a target="_blank" href="https://www.facebook.com/dialog/oauth?client_id=651073722369800&response_type=token&scope=email&redirect_uri=https://www.facebook.com/connect/login_success.html"
+			class="fb-link"><i class="fb-icon fab fa-facebook"></i>&nbsp;Facebook Login</a></button>
+
+	<main>
+
+		<form id="form" action="http://scrapsh.herokuapp.com/api/post/" method="POST">
+			<table style="width:100%;">
+				<tr>
+					<td class="text">URL</td>
+					<td>
+						<input type="text" name="url" id="url" class="text-area">
+						<input type="hidden" name="content" id="content" value="content" />
+					</td>
+				</tr>
+				<tr>
+					<td class="text">RATING</td>
+					<td>
+						<input type="hidden" name="rate" id="rate" class="text-area">
+						<div id="div-rating"></div>
+					</td>
+				</tr>
+				<tr>
+					<td class="text">REVIEW</td>
+					<td>
+						<textarea name="review" id="review" placeholder="Reviews help others identify false content" onfocus="this.placeholder = ''" class="text-area"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td class="text">TAGS</td>
+					<td>
+						<input type='text' name="tags" id="tags" />
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<button type="submit" class="submit-button">SUBMIT</button>
+						<img src="processing.gif" id="img-processing" style="width:37px;display: none;float:right" />
+						<img src="done.png" id="img-done" style="width:37px;display: none;float: right;" />
+					</td>
+				</tr>
+				<tr>
+					<td id="td-err" colspan="2"></td>
+				</tr>
+				<tr>
+					<td id="count" colspan="2"></td>
+				</tr>
+			</table>
+		</form>
+	</main>
+
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.star-rating-svg.min.js"></script>
+	<script type="text/javascript" src="jquery.tagsinput.min.js"></script>	
+	<!-- font awesome -->
+	<script src="https://kit.fontawesome.com/14f56731e6.js" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="popup.js"></script>
+	<script type="text/javascript" src="background.js"></script>
+
+</body>
+
+</html>
+<!-- "content_scripts": [
+{
+	"matches": ["*://*.facebook.com/*"],
+	"js": ["popup.js","jquery.min.js","bj.js"]
+}
+], -->

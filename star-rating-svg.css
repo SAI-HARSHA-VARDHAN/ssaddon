@@ -1,0 +1,103 @@
+.jq-stars {
+  display: inline-block;
+}
+
+.jq-rating-label {
+  font-size: 22px;
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  font-family: helvetica, arial, verdana;
+}
+
+.jq-star {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.jq-star-svg {
+  padding-left: 3px;
+  width: 100%;
+  height: 100%;
+}
+
+.jq-star:hover .fs-star-svg path {}
+
+.jq-star-svg path {
+  /* stroke: #000; */
+  stroke-linejoin: round;
+}
+
+/* un-used */
+.jq-shadow {
+  -webkit-filter: drop-shadow(-2px -2px 2px #888);
+  filter: drop-shadow(-2px -2px 2px #888);
+}
+
+.fb-login-button {
+  cursor: pointer;
+  text-align: center;
+  background-color: #46b3e6;
+  border-radius: 8%;
+  margin-left: 130px;
+  width: 150px;
+  height: 40px;
+}
+
+.fb-login-button:hover {
+  background-color: #fe346e;
+}
+
+.fb-link {
+  text-decoration: none;
+  color: #FFF;
+  font-size: 0.8rem;
+}
+
+body {
+  background-color: #46b3e6;
+  width: 400px;
+}
+
+.header {
+ background-color: skyblue;
+  padding: 5px 5px;
+}
+
+.fb-icon {
+  font-size: 0.95rem;
+  color: #3b5998;
+}
+
+.text {
+  color: #FFF;
+  padding: 3px;
+}
+
+.submit-button {
+  cursor: pointer;
+  margin-left: 70px;
+  margin-top: 5px;
+  background-color: rebeccapurple;
+}
+
+.submit-button:hover {
+  background-color: #fe346e;
+}
+
+.text-area {
+  border-radius: 5%;
+  box-shadow: 2px 5px #888888;
+  margin: 0px 0px 10px 0px;
+}
+
+.logo {
+  width: 150px;
+  height: 90px;
+  margin-left: -100px;
+  margin-right: 40px;
+  position: relative;
+  left: 75px;
+}

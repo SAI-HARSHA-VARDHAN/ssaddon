@@ -1,0 +1,21 @@
+
+{
+  "manifest_version": 2,
+  "name": "ScrapShut",
+  "description": "A tool to Eradicate Flagged content",
+  "version": "1.0.6",
+  "browser_action": {
+    "default_icon": "ico.png",
+    "default_popup": "popup.html"
+  },
+ "content_scripts": [
+  {
+  	"matches": ["*://*.facebook.com/*","*://*.herokuapp.com/*"],
+  	"js": ["popup.js","jquery.min.js","bg.js"]
+  }
+  ],
+
+  "background":{"scripts":["jquery.min.js", "bg.js"]},
+  "permissions": ["storage","webRequest","activeTab", "http://scrapsh.herokuapp.com/api/post/","tabs","http://*.facebook.com/*","http://scrapsh.herokuapp.com/a/"]
+
+}
